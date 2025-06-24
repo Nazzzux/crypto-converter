@@ -1,7 +1,8 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { CryptoAssetsApi } from '../cryptoAssets.api';
-import { cryptoAssetsQueryKeys } from '../cryptoAssets-qk';
 import { PAGE_LIMIT, PER_PAGE_LIMIT } from 'constants/perPageLimit';
+
+import { cryptoAssetsQueryKeys } from '../cryptoAssets-qk';
+import { CryptoAssetsApi } from '../cryptoAssets.api';
 
 export const useGetAllAssets = () => {
   return useInfiniteQuery({
