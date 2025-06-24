@@ -1,0 +1,35 @@
+@use 'styles/variables' as *;
+
+.tableWrapper {
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid $grey;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableSection {
+  &.header {
+    tr {
+      th,
+      td {
+        vertical-align: middle;
+        padding: 12px 12px;
+      }
+    }
+  }
+}
+
+.tableRow {
+  text-align: center;
+  border: 1px solid $grey;
+}
+
+.tableItem {
+  padding: 8px 12px;
+  border-bottom: 1px solid $grey;
+  vertical-align: middle;
+}

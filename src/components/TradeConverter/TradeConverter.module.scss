@@ -1,0 +1,61 @@
+@use 'styles/variables' as *;
+
+.tradeConverter {
+  width: 450px;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.label {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+}
+
+.input {
+  padding: 35px 15px;
+  font-size: 32px;
+}
+
+.assetsWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 150px;
+  z-index: 150;
+}
+
+.optionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.swapButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: $bg;
+  border-radius: 50%;
+  & > svg {
+    color: $grey;
+  }
+}
