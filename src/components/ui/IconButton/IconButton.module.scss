@@ -1,0 +1,26 @@
+@use 'styles/variables' as *;
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  border: none;
+  background-color: transparent;
+  color: $accent;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:disabled {
+    color: $grey;
+    cursor: not-allowed;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,26 @@
+@use 'styles/variables' as *;
+
+.link {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 1px;
+  }
+
+  &:active {
+    background-color: $accent-light;
+  }
+
+  &.active {
+    background-color: $accent;
+    color: $white;
+  }
+}

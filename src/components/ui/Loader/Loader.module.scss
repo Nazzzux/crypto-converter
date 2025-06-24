@@ -1,0 +1,23 @@
+.loader {
+  border: solid transparent;
+  border-top-color: #3b82f6; // accent color
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-sizing: border-box;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 9998;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

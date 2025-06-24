@@ -1,0 +1,22 @@
+@use 'styles/variables' as *;
+
+.headerWrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: $bg;
+  z-index: 100;
+}
+
+.headerContent {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+}

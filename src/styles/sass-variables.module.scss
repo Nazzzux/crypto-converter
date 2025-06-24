@@ -1,0 +1,16 @@
+@use './variables' as variables;
+
+:export {
+  bg: variables.$bg;
+  white: variables.$white;
+
+  text_primary: variables.$text-primary;
+  text_secondary: variables.$text-secondary;
+
+  accent: variables.$accent;
+  accent_hover: variables.$accent-hover;
+
+  success: variables.$success;
+  error: variables.$error;
+  warning: variables.$warning;
+}

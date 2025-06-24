@@ -1,0 +1,35 @@
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loadMoreButton {
+  margin-top: 16px;
+  margin-left: auto;
+}
+
+.headerItemWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tableItemIcon {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  object-fit: contain;
+  width: 28px;
+  height: 28px;
+}
+
+.detailsButton {
+  display: initial;
+}

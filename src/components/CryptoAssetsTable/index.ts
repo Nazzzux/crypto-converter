@@ -1,0 +1,1 @@
+export { CryptoAssetsTable } from './CryptoAssetsTable';
