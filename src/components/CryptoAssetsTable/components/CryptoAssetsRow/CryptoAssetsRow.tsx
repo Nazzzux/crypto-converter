@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { CRYPTO_ACTIONS_OPTIONS } from 'constants/cryptoActionsOptions';
 import { ICryptoAsset } from 'services/cryptoAssets/types';
 
-import { TableItem, TableRow } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
 import { Dropdown } from 'components/ui/Dropdown';
+import { TableItem, TableRow } from 'components/ui/Table';
 
 import { formatCurrency } from 'helpers/formatCurrency';
 

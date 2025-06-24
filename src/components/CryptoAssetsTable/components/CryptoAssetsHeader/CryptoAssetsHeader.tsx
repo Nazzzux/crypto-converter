@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { TableItem, TableRow, TableSection } from 'components/ui/Avatar/Table';
 import { IconButton } from 'components/ui/IconButton';
+import { TableItem, TableRow, TableSection } from 'components/ui/Table';
 
 import { getSortIcon } from 'helpers/getSortIcon';
 

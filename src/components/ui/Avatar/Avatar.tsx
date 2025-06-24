@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
-import styles from './Avatar.module.scss';
+import { IAvatarProps } from './types';
 
-interface IAvatarProps {
-  initials: string;
-}
+import styles from './Avatar.module.scss';
 
 export const Avatar: FC<IAvatarProps> = ({ initials }) => {
   return <div className={styles.avatar}>{initials}</div>;

@@ -6,9 +6,9 @@ import { ICryptoAsset } from 'services/cryptoAssets/types';
 
 import { SORT_DIRECTIONS } from 'interfaces/sort';
 
-import { TableSection, TableWrapper } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
 import { Loader } from 'components/ui/Loader';
+import { TableSection, TableWrapper } from 'components/ui/Table';
 
 import { getNextSort } from 'helpers/getNextSort';
 
