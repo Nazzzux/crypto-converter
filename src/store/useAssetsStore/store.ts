@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+
 import { ITradeState } from './types';
 
 const getDefaultState = () => ({

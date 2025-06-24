@@ -1,7 +1,9 @@
-import { Button } from 'components/ui/Button';
-import { usePromiseStatus } from 'hooks/usePromiseStatus';
 import { useAccessStore } from 'store/useAssetsStore';
 import { getResetUser, useUserStore } from 'store/useUserStore';
+
+import { usePromiseStatus } from 'hooks/usePromiseStatus';
+
+import { Button } from 'components/ui/Button';
 
 export const LogoutButton = () => {
   const resetUser = useUserStore(getResetUser);

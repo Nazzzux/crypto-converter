@@ -1,6 +1,8 @@
 import { FC, HTMLAttributes } from 'react';
-import styles from '../Table.module.scss';
+
 import clsx from 'clsx';
+
+import styles from '../Table.module.scss';
 
 interface ITableRowProps extends HTMLAttributes<HTMLTableRowElement> {}
 

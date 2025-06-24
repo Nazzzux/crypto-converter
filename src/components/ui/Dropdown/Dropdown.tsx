@@ -1,6 +1,8 @@
-import { useRef, useState, useEffect, ReactNode } from 'react';
-import styles from './Dropdown.module.scss';
+import { ReactNode, useEffect, useRef, useState } from 'react';
+
 import clsx from 'clsx';
+
+import styles from './Dropdown.module.scss';
 
 export interface IOptionBase {
   value: string;

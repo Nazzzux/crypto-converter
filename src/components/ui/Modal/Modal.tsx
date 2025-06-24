@@ -1,8 +1,9 @@
 import { FC, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './Modal.module.scss';
 import { IModalProps } from './types';
+
+import styles from './Modal.module.scss';
 
 export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
   useEffect(() => {

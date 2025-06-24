@@ -1,9 +1,11 @@
-import clsx from 'clsx';
 import { FC } from 'react';
+
+import clsx from 'clsx';
+
 import { IButtonProps } from './types';
+import { Loader } from '../Loader';
 
 import styles from './Button.module.scss';
-import { Loader } from '../Loader';
 
 export const Button: FC<IButtonProps> = ({
   size = 'small',

@@ -1,12 +1,16 @@
-import { Input } from 'components/ui/Input';
-import { Dropdown } from 'components/ui/Dropdown';
-import { useGetAllAssets } from 'services/cryptoAssets/hooks/useGetAllAssets';
-import styles from './TradeConverter.module.scss';
 import { ChangeEvent, useMemo } from 'react';
+
+import { useGetAllAssets } from 'services/cryptoAssets/hooks/useGetAllAssets';
 import { useAccessStore } from 'store/useAssetsStore';
-import { Loader } from 'components/ui/Loader';
-import { IconButton } from 'components/ui/IconButton';
+
 import { ReactComponent as ArrowDownIcon } from 'assets/icons/ArrowDownIcon.svg';
+
+import { Dropdown } from 'components/ui/Dropdown';
+import { IconButton } from 'components/ui/IconButton';
+import { Input } from 'components/ui/Input';
+import { Loader } from 'components/ui/Loader';
+
+import styles from './TradeConverter.module.scss';
 
 export const TradeConverter = () => {
   const { coinId, fiat, amount, isFiatPrimary, setAmount, setCoinId, toggleDirection } =

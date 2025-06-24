@@ -1,4 +1,5 @@
 import { TradeConverter } from 'components/TradeConverter';
+
 import styles from './TradePage.module.scss';
 
 export const TradePage = () => {

@@ -1,4 +1,4 @@
-import { ISortDirections, SORT_DIRECTIONS } from "interfaces/sort";
+import { ISortDirections, SORT_DIRECTIONS } from 'interfaces/sort';
 
 export const getNextSort = (currentSort: ISortDirections): ISortDirections => {
   const sortMaps = new Map<ISortDirections, ISortDirections>([

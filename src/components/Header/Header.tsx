@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
+
 import { HOME_PATH } from 'constants/paths';
+import { getUser, useUserStore } from 'store/useUserStore';
+
 import { Container } from 'components/ui/Container';
-import { Menu } from './Menu';
+
 import { AccountDataWrapper } from './AccountDataWrapper';
-import { useUserStore, getUser } from 'store/useUserStore';
+import { Menu } from './Menu';
+
+import styles from './Header.module.scss';
 
 export const Header = () => {
   const userData = useUserStore(getUser);

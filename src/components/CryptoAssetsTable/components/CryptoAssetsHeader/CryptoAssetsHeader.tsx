@@ -1,9 +1,13 @@
-import { ICryptoColumnNames } from 'components/CryptoAssetsTable/types';
-import { TableSection, TableRow, TableItem } from 'components/ui/Avatar/Table';
-import { IconButton } from 'components/ui/IconButton';
-import { getSortIcon } from 'helpers/getSortIcon';
-import { ISortDirections } from 'interfaces/sort';
 import { FC } from 'react';
+
+import { ISortDirections } from 'interfaces/sort';
+
+import { ICryptoColumnNames } from 'components/CryptoAssetsTable/types';
+import { TableItem, TableRow, TableSection } from 'components/ui/Avatar/Table';
+import { IconButton } from 'components/ui/IconButton';
+
+import { getSortIcon } from 'helpers/getSortIcon';
+
 import styles from '../../CryptoAssetsTable.module.scss';
 interface ICryptoAssetsTableProps {
   onClick: (name: ICryptoColumnNames) => VoidFunction;

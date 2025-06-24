@@ -1,8 +1,11 @@
 import { FC, useState } from 'react';
-import { IInputProps } from '../Input';
-import { IconButton } from 'components/ui/IconButton';
-import { ReactComponent as VisibilityIcon } from 'assets/icons/VisibilityIcon.svg';
+
 import { ReactComponent as VisibilityHiddenIcon } from 'assets/icons/VisibilityHiddenIcon.svg';
+import { ReactComponent as VisibilityIcon } from 'assets/icons/VisibilityIcon.svg';
+
+import { IconButton } from 'components/ui/IconButton';
+
+import { IInputProps } from '../Input';
 import { InputControlled } from '../InputControlled';
 
 export const PasswordInput: FC<IInputProps> = props => {

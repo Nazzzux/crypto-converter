@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import styles from '../Table.module.scss';
 import clsx from 'clsx';
+
+import styles from '../Table.module.scss';
 
 interface ITableItemProps extends React.HTMLAttributes<HTMLTableCellElement> {
   isHeader?: boolean;

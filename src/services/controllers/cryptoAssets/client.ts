@@ -1,6 +1,7 @@
 import { AxiosInstance } from 'axios';
 import axios from 'axios';
 import qs from 'query-string';
+
 import { axiosErrorInterceptor } from '../interceptors/handleError';
 
 export const cryptoAssetsApi = init();

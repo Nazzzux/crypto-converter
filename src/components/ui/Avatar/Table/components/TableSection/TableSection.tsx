@@ -1,5 +1,7 @@
-import clsx from 'clsx';
 import { FC, HTMLAttributes } from 'react';
+
+import clsx from 'clsx';
+
 import styles from '../Table.module.scss';
 
 interface ITableSectionProps extends HTMLAttributes<HTMLTableSectionElement> {

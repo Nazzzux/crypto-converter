@@ -1,6 +1,7 @@
+import { PER_PAGE_LIMIT } from 'constants/perPageLimit';
+
 import * as t from './types';
 import { cryptoAssetsApi } from '../controllers/cryptoAssets/client';
-import { PER_PAGE_LIMIT } from 'constants/perPageLimit';
 
 export const CryptoAssetsApi = {
   // id and price

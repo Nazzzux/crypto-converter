@@ -1,10 +1,12 @@
-import { TableRow, TableItem } from 'components/ui/Avatar/Table';
+import { useState } from 'react';
+
 import { ICryptoAsset } from 'services/cryptoAssets/types';
 
-import styles from '../../CryptoAssetsTable.module.scss';
-import { useState } from 'react';
+import { TableItem, TableRow } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
 import { Dropdown } from 'components/ui/Dropdown';
+
+import styles from '../../CryptoAssetsTable.module.scss';
 
 const OPTIONS = [
   { value: 'sell', label: 'Buy' },

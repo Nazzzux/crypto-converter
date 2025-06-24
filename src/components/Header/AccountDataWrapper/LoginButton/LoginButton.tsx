@@ -1,6 +1,7 @@
+import { useState } from 'react';
+
 import { LoginForm } from 'components/Forms/Login/Login';
 import { Button } from 'components/ui/Button';
-import { useState } from 'react';
 
 export const LoginButton = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);

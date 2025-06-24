@@ -1,8 +1,10 @@
-import clsx from 'clsx';
 import { FC } from 'react';
 
-import styles from './Input.module.scss';
+import clsx from 'clsx';
+
 import { IInputProps } from './types';
+
+import styles from './Input.module.scss';
 
 export const Input: FC<IInputProps> = ({
   isDisabled = false,

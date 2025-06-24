@@ -80,7 +80,7 @@ export default tseslint.config(
         },
       ],
       'no-multiple-empty-lines': ['warn', { max: 1 }],
-      '@typescript-eslint/no-explicit-any': 'off', // TODO: remove this
+      '@typescript-eslint/no-explicit-any': 'off',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
       'import/order': [

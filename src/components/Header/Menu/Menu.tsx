@@ -1,7 +1,8 @@
 import { HOME_PATH, TRADE_PATH } from 'constants/paths';
 
-import styles from './Menu.module.scss';
 import { Link } from 'components/ui/Link';
+
+import styles from './Menu.module.scss';
 
 const MENU_PATHS = [
   { to: HOME_PATH, title: 'Home' },

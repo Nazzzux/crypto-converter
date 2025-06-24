@@ -1,25 +1,31 @@
+import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
-import styles from './Login.module.scss';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { TRADE_PATH } from 'constants/paths';
+import { getSetUser } from 'store/useUserStore/selectors';
+import { useUserStore } from 'store/useUserStore/store';
+
+import { usePromiseStatus } from 'hooks/usePromiseStatus';
+
+import { Button } from 'components/ui/Button';
 import { InputControlled } from 'components/ui/Input';
 import { PasswordInput } from 'components/ui/Input/PasswordInput';
+import { Modal } from 'components/ui/Modal';
+import { IModalProps } from 'components/ui/Modal/types';
+
+import { encryptString } from 'helpers/crypto';
+
 import {
   ILoginForm,
   LOGIN_FORM_FIELDS,
   loginFormDefaultValues,
   loginFormValidationSchema,
 } from './form';
-import { Button } from 'components/ui/Button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { usePromiseStatus } from 'hooks/usePromiseStatus';
-import { getSetUser } from 'store/useUserStore/selectors';
-import { useUserStore } from 'store/useUserStore/store';
-import { encryptString } from 'helpers/crypto';
-import { useNavigate } from 'react-router-dom';
-import { TRADE_PATH } from 'constants/paths';
-import { IModalProps } from 'components/ui/Modal/types';
-import { FC } from 'react';
-import { Modal } from 'components/ui/Modal';
+
+import styles from './Login.module.scss';
+import ToastService from 'helpers/ToastService';
 
 interface ILoginProps extends IModalProps {}
 
@@ -41,12 +47,11 @@ export const LoginForm: FC<ILoginProps> = ({ isOpen, onClose }) => {
       const encryptedEmail = encryptString(email);
 
       setUser(encryptedEmail);
-      onClose()
+      onClose();
 
       navigate(TRADE_PATH);
     } catch (error) {
-      // TODO add the toast
-      console.error('Login failed', error);
+      error instanceof Error && ToastService.showError(`Login failed ${error.message}`);
     }
   };
 

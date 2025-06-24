@@ -1,10 +1,12 @@
 import { FC } from 'react';
+
 import clsx from 'clsx';
+
 import styles from './Loader.module.scss';
 
 interface ILoaderProps {
   size?: number;
-  backdrop?: boolean; 
+  backdrop?: boolean;
   className?: string;
 }
 
