@@ -1,56 +1,49 @@
 # [Demo link](https://nazzzux.github.io/crypto-converter)
 
-# React + TypeScript + Vite
+# Crypto Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Crypto Converter is a React-based web application that allows users to view cryptocurrency prices, sort and filter crypto assets, and load more data with infinite scrolling. The app fetches data from external APIs and provides a clean and user-friendly interface for crypto enthusiasts and traders.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display a list of cryptocurrencies with their icons, names, and current prices.
+- Infinite scrolling and "Load More" button to fetch additional assets.
+- Sorting assets by name or price in ascending/descending order.
+- Error handling with UI notifications.
+- Responsive and accessible UI components.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** — Frontend UI library
+- **TypeScript** — Typed JavaScript for better maintainability
+- **Vite** — Build tool and development server
+- **React Query (TanStack Query)** — Data fetching and caching
+- **SCSS Modules** — Styling with scoped CSS
+- **Axios** — HTTP client for API requests
+- **Zustand** (optional) — State management (if used)
+- **Toast notifications** — User feedback on errors or status (e.g. custom `ToastService`)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Node.js >= 16.x
+- npm or yarn
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Installation
+git clone https://github.com/Nazzzux/crypto-converter.git
+cd crypto-converter
+npm install
+or if you prefer yarn:
+yarn install
+
+
+Running Locally
+Start the development server:
+
+npm run dev
+
+yarn dev
+Open your browser and visit http://localhost:5173 to see the app.
+
+Feel free to open issues or pull requests. Contributions are welcome!
