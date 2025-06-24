@@ -52,6 +52,11 @@ export const TradeConverter = () => {
 
   const getName = (isFiatPrimary: boolean) => (isFiatPrimary ? 'fiat' : 'crypto');
 
+  const handleToggleDirection = () => {
+    toggleDirection();
+    setAmount('0');
+  };
+
   if (isLoading) return <Loader />;
 
   return (
@@ -75,7 +80,7 @@ export const TradeConverter = () => {
         />
       </div>
 
-      <IconButton className={styles.swapButton} onClick={toggleDirection}>
+      <IconButton className={styles.swapButton} onClick={handleToggleDirection}>
         <ArrowDownIcon />
       </IconButton>
 
