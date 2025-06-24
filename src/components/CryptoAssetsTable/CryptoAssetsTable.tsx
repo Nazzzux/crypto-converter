@@ -1,16 +1,21 @@
-import { TableWrapper, TableSection } from 'components/ui/Avatar/Table';
-import { Loader } from 'components/ui/Loader';
-import { useGetAllAssets } from 'services/cryptoAssets/hooks/useGetAllAssets';
+import { useMemo, useState } from 'react';
 
-import styles from './CryptoAssetsTable.module.scss';
+import { useGetAllAssets } from 'services/cryptoAssets/hooks/useGetAllAssets';
+import { ICryptoAsset } from 'services/cryptoAssets/types';
+
+import { ISortDirections, SORT_DIRECTIONS } from 'interfaces/sort';
+
+import { TableSection, TableWrapper } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
+import { Loader } from 'components/ui/Loader';
+
+import { getNextSort } from 'helpers/getNextSort';
+
 import { CryptoAssetsHeader } from './components/CryptoAssetsHeader/CryptoAssetsHeader';
 import { CryptoAssetsRow } from './components/CryptoAssetsRow/CryptoAssetsRow';
-import { ISortDirections, SORT_DIRECTIONS } from 'interfaces/sort';
 import { CRYPTO_ASSET_COLUMN_NAMES, ICryptoColumnNames } from './types';
-import { useMemo, useState } from 'react';
-import { getNextSort } from 'helpers/getNextSort';
-import { ICryptoAsset } from 'services/cryptoAssets/types';
+
+import styles from './CryptoAssetsTable.module.scss';
 
 const DEFAULT_SORT_STATE: { name: ICryptoColumnNames; order: ISortDirections }[] = [
   { name: CRYPTO_ASSET_COLUMN_NAMES.NAME, order: SORT_DIRECTIONS.NONE },

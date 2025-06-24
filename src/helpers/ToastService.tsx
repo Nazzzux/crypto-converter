@@ -1,5 +1,6 @@
-import { ToastComponent } from 'components/ToastComponent';
 import { toast, ToastOptions } from 'react-toastify';
+
+import { ToastComponent } from 'components/ToastComponent';
 
 type ToastType = 'success' | 'error' | 'info' | 'warning';
 type ToastFnType = 'showSuccess' | 'showError' | 'showInfo' | 'showWarning';

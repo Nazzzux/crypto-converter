@@ -16,6 +16,7 @@ import { Modal } from 'components/ui/Modal';
 import { IModalProps } from 'components/ui/Modal/types';
 
 import { encryptString } from 'helpers/crypto';
+import ToastService from 'helpers/ToastService';
 
 import {
   ILoginForm,
@@ -25,7 +26,6 @@ import {
 } from './form';
 
 import styles from './Login.module.scss';
-import ToastService from 'helpers/ToastService';
 
 interface ILoginProps extends IModalProps {}
 

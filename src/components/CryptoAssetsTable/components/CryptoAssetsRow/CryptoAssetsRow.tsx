@@ -6,6 +6,8 @@ import { TableItem, TableRow } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
 import { Dropdown } from 'components/ui/Dropdown';
 
+import { formatCurrency } from 'helpers/formatCurrency';
+
 import styles from '../../CryptoAssetsTable.module.scss';
 
 const OPTIONS = [
@@ -24,7 +26,8 @@ export const CryptoAssetsRow = ({ name, image, current_price }: ICryptoAsset) =>
         <img className={styles.icon} src={image} alt={name} />
       </TableItem>
       <TableItem>{name}</TableItem>
-      <TableItem>{current_price.toFixed(2)}</TableItem>
+      {/* <TableItem>{current_price.toFixed(2)}</TableItem> */}
+      <TableItem>{formatCurrency(current_price)}</TableItem>
       <TableItem>
         {isDropdownVisible ? (
           <Dropdown options={OPTIONS} defaultValue={OPTIONS[0].value} />

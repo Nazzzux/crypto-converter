@@ -10,27 +10,32 @@ import { ProtectedRoute } from 'components/ProtectedRoute/ProtectedRoute';
 
 import { AppProviders } from '../AppProviders';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      element: <AppProviders />,
+      children: [
+        {
+          element: <BaseLayout />,
+          children: [
+            {
+              element: <HomePage />,
+              path: HOME_PATH,
+            },
+            {
+              element: (
+                <ProtectedRoute>
+                  <TradePage />
+                </ProtectedRoute>
+              ),
+              path: TRADE_PATH,
+            },
+          ],
+        },
+      ],
+    },
+  ],
   {
-    element: <AppProviders />,
-    children: [
-      {
-        element: <BaseLayout />,
-        children: [
-          {
-            element: <HomePage />,
-            path: HOME_PATH,
-          },
-          {
-            element: (
-              <ProtectedRoute>
-                <TradePage />
-              </ProtectedRoute>
-            ),
-            path: TRADE_PATH,
-          },
-        ],
-      },
-    ],
+    basename: '/crypto-converter',
   },
-]);
+);
