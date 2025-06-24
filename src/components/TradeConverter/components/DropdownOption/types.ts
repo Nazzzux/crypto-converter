@@ -1,4 +1,4 @@
-import { IOptionBase } from 'components/ui/Dropdown/Dropdown';
+import { IOptionBase } from 'interfaces/options';
 
 export interface ITradeDropdownOption extends IOptionBase {
   image: string;
