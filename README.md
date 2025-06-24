@@ -20,7 +20,7 @@ Crypto Converter is a React-based web application that allows users to view cryp
 - **React Query (TanStack Query)** — Data fetching and caching
 - **SCSS Modules** — Styling with scoped CSS
 - **Axios** — HTTP client for API requests
-- **Zustand** (optional) — State management (if used)
+- **Zustand** — State management
 - **Toast notifications** — User feedback on errors or status (e.g. custom `ToastService`)
 
 ## Getting Started
