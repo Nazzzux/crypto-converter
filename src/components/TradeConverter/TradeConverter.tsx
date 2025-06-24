@@ -10,6 +10,10 @@ import { IconButton } from 'components/ui/IconButton';
 import { Input } from 'components/ui/Input';
 import { Loader } from 'components/ui/Loader';
 
+import { getFieldName } from 'helpers/tradeConverterHelpers';
+
+import { DropdownOption } from './components/DropdownOption';
+
 import styles from './TradeConverter.module.scss';
 
 export const TradeConverter = () => {
@@ -34,13 +38,6 @@ export const TradeConverter = () => {
     setAmount(sanitized);
   };
 
-  const renderOption = (option: (typeof options)[number]) => (
-    <div className={styles.optionWrapper}>
-      <img className={styles.icon} src={option.image} alt={option.label} />
-      <span>{option.label}</span>
-    </div>
-  );
-
   const converted = useMemo(() => {
     const n = parseFloat(amount);
     if (!price || isNaN(n)) return '';
@@ -49,8 +46,6 @@ export const TradeConverter = () => {
 
   const getLabel = (isFiatPrimary: boolean) =>
     isFiatPrimary ? fiat.toUpperCase() : selected?.label;
-
-  const getName = (isFiatPrimary: boolean) => (isFiatPrimary ? 'fiat' : 'crypto');
 
   const handleToggleDirection = () => {
     toggleDirection();
@@ -67,17 +62,19 @@ export const TradeConverter = () => {
           className={styles.inputWrapper}
           label={getLabel(isFiatPrimary)}
           type="text"
-          name={getName(isFiatPrimary)}
+          name={getFieldName(isFiatPrimary)}
           value={amount}
           onChange={changeHandler}
         />
-        <Dropdown
-          className={styles.dropdown}
-          options={options}
-          value={coinId}
-          onChange={val => setCoinId(val)}
-          renderOption={renderOption}
-        />
+        {!isFiatPrimary && (
+          <Dropdown
+            className={styles.dropdown}
+            options={options}
+            value={coinId}
+            onChange={val => setCoinId(val)}
+            renderOption={props => <DropdownOption {...props} />}
+          />
+        )}
       </div>
 
       <IconButton className={styles.swapButton} onClick={handleToggleDirection}>
@@ -89,7 +86,7 @@ export const TradeConverter = () => {
           classes={{ input: styles.input, label: styles.label }}
           className={styles.inputWrapper}
           label={getLabel(!isFiatPrimary)}
-          name={getName(!isFiatPrimary)}
+          name={getFieldName(!isFiatPrimary)}
           value={converted}
           readOnly
         />

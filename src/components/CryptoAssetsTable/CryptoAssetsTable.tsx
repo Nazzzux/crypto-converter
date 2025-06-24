@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 
+import { DEFAULT_SORT_STATE } from 'constants/defaultSortState';
 import { useGetAllAssets } from 'services/cryptoAssets/hooks/useGetAllAssets';
 import { ICryptoAsset } from 'services/cryptoAssets/types';
 
-import { ISortDirections, SORT_DIRECTIONS } from 'interfaces/sort';
+import { SORT_DIRECTIONS } from 'interfaces/sort';
 
 import { TableSection, TableWrapper } from 'components/ui/Avatar/Table';
 import { Button } from 'components/ui/Button';
@@ -16,11 +17,6 @@ import { CryptoAssetsRow } from './components/CryptoAssetsRow/CryptoAssetsRow';
 import { CRYPTO_ASSET_COLUMN_NAMES, ICryptoColumnNames } from './types';
 
 import styles from './CryptoAssetsTable.module.scss';
-
-const DEFAULT_SORT_STATE: { name: ICryptoColumnNames; order: ISortDirections }[] = [
-  { name: CRYPTO_ASSET_COLUMN_NAMES.NAME, order: SORT_DIRECTIONS.NONE },
-  { name: CRYPTO_ASSET_COLUMN_NAMES.PRICE, order: SORT_DIRECTIONS.NONE },
-];
 
 export const CryptoAssetsTable = () => {
   const [sortState, setSortState] = useState(() => DEFAULT_SORT_STATE);
@@ -49,38 +45,37 @@ export const CryptoAssetsTable = () => {
     setSortState(prevState =>
       prevState.map(item => ({
         ...item,
-        order: item.name === name ? getNextSort(item.order) : item.order,
+        order: item.name === name ? getNextSort(item.order) : SORT_DIRECTIONS.NONE,
       })),
     );
   };
 
   const sortedAssets = useMemo(() => {
-    let result = data?.pages.flat() ?? [];
+    const result = data?.pages.flat() ?? [];
 
-    for (const { name, order } of sortState) {
-      if (order === SORT_DIRECTIONS.NONE) continue;
+    const activeSorts = sortState.filter(({ order }) => order !== SORT_DIRECTIONS.NONE);
 
-      result = result.toSorted((a: ICryptoAsset, b: ICryptoAsset) => {
+    if (!activeSorts.length) return result;
+
+    return result.toSorted((a: ICryptoAsset, b: ICryptoAsset) => {
+      for (const { name, order } of activeSorts) {
         let aValue: string | number = '';
         let bValue: string | number = '';
 
         if (name === CRYPTO_ASSET_COLUMN_NAMES.NAME) {
           aValue = a.name.toLowerCase();
           bValue = b.name.toLowerCase();
-        }
-
-        if (name === CRYPTO_ASSET_COLUMN_NAMES.PRICE) {
+        } else if (name === CRYPTO_ASSET_COLUMN_NAMES.PRICE) {
           aValue = a.current_price;
           bValue = b.current_price;
         }
 
         if (aValue < bValue) return order === SORT_DIRECTIONS.ASC ? -1 : 1;
         if (aValue > bValue) return order === SORT_DIRECTIONS.ASC ? 1 : -1;
-        return 0;
-      });
-    }
+      }
 
-    return result;
+      return 0;
+    });
   }, [data, sortState]);
 
   if (isLoading) {

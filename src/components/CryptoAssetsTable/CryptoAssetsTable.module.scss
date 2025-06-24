@@ -1,3 +1,5 @@
+@use 'styles/variables' as *;
+
 .loaderWrapper {
   display: flex;
   justify-content: center;
@@ -6,8 +8,14 @@
 }
 
 .loadMoreButton {
-  margin-top: 16px;
-  margin-left: auto;
+  margin: 16px auto 0;
+}
+
+.tableHeader {
+  top: calc($headerHeight - 2px);
+  tr {
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .headerItemWrapper {

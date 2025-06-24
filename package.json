@@ -49,6 +49,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "loadash": "^1.0.0",
     "path": "^0.12.7",
     "prettier": "^3.5.3",
     "typescript": "~5.8.3",

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { LoginForm } from 'components/Forms/Login/Login';
+import { LoginForm } from 'components/Forms/LoginForm/LoginForm';
 import { Button } from 'components/ui/Button';
 
 export const LoginButton = () => {

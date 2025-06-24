@@ -1,0 +1,1 @@
+export { CryptoAssetsRow } from './CryptoAssetsRow';

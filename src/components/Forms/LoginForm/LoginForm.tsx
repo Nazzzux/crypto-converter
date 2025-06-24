@@ -13,7 +13,6 @@ import { Button } from 'components/ui/Button';
 import { InputControlled } from 'components/ui/Input';
 import { PasswordInput } from 'components/ui/Input/PasswordInput';
 import { Modal } from 'components/ui/Modal';
-import { IModalProps } from 'components/ui/Modal/types';
 
 import { encryptString } from 'helpers/crypto';
 import ToastService from 'helpers/ToastService';
@@ -24,10 +23,9 @@ import {
   loginFormDefaultValues,
   loginFormValidationSchema,
 } from './form';
+import { ILoginProps } from './types';
 
-import styles from './Login.module.scss';
-
-interface ILoginProps extends IModalProps {}
+import styles from './LoginForm.module.scss';
 
 export const LoginForm: FC<ILoginProps> = ({ isOpen, onClose }) => {
   const setUser = useUserStore(getSetUser);

@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
-import styles from './ToastComponent.module.scss';
+import { IToastComponentProps } from './types';
 
-interface IToastComponentProps {
-  text: string;
-}
+import styles from './ToastComponent.module.scss';
 
 export const ToastComponent: FC<IToastComponentProps> = ({ text }) => {
   return <div className={styles.text}>{text}</div>;

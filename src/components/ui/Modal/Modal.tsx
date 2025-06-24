@@ -1,6 +1,8 @@
 import { FC, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
+import { ReactComponent as CloseIcon } from 'assets/icons/CloseIcon.svg';
+
 import { IModalProps } from './types';
 
 import styles from './Modal.module.scss';
@@ -28,7 +30,7 @@ export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
     <div className={styles.backdrop} onClick={onClose}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
-          ×
+          <CloseIcon />
         </button>
         {children}
       </div>

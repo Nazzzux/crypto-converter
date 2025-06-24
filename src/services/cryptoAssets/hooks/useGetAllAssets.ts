@@ -1,5 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { PAGE_LIMIT, PER_PAGE_LIMIT } from 'constants/perPageLimit';
+import { ONE_MINUTE_IN_MS } from 'constants/time';
 
 import { cryptoAssetsQueryKeys } from '../cryptoAssets-qk';
 import { CryptoAssetsApi } from '../cryptoAssets.api';
@@ -20,6 +21,6 @@ export const useGetAllAssets = () => {
       return undefined;
     },
     refetchOnWindowFocus: true,
-    staleTime: 1000 * 60,
+    staleTime: ONE_MINUTE_IN_MS,
   });
 };

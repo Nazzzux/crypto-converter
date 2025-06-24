@@ -4,6 +4,7 @@
   overflow: hidden;
   border-radius: 8px;
   border: 1px solid $grey;
+  overflow: visible;
 }
 
 .table {
@@ -13,11 +14,15 @@
 
 .tableSection {
   &.header {
+    position: sticky;
+    background-color: $bg;
+    z-index: 500;
+
     tr {
       th,
       td {
         vertical-align: middle;
-        padding: 12px 12px;
+        padding: 12px;
       }
     }
   }
