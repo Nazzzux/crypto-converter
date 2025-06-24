@@ -1,11 +1,31 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+
+import { ReactComponent as CloseIcon } from 'assets/icons/CloseIcon.svg';
 
 import { IModalProps } from './types';
 
 import styles from './Modal.module.scss';
 
 export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
+  const modalRootRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    let modalRoot = document.getElementById('modal-root');
+    if (!modalRoot) {
+      modalRoot = document.createElement('div');
+      modalRoot.setAttribute('id', 'modal-root');
+      document.body.appendChild(modalRoot);
+    }
+    modalRootRef.current = modalRoot;
+
+    return () => {
+      if (modalRootRef.current && modalRootRef.current.childNodes.length === 0) {
+        modalRootRef.current.remove();
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -25,14 +45,14 @@ export const Modal: FC<IModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <div className={styles.backdrop} onClick={onClose}>
+    <div className={styles.backdrop} onClick={onClose} data-testid="modal-backdrop">
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
-          ×
+          <CloseIcon />
         </button>
         {children}
       </div>
     </div>,
-    document.body,
+    document.getElementById('modal-root')!,
   );
 };

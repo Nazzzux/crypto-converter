@@ -1,22 +1,16 @@
 import { FC } from 'react';
 
-import { ISortDirections } from 'interfaces/sort';
-
-import { ICryptoColumnNames } from 'components/CryptoAssetsTable/types';
-import { TableItem, TableRow, TableSection } from 'components/ui/Avatar/Table';
 import { IconButton } from 'components/ui/IconButton';
+import { TableItem, TableRow, TableSection } from 'components/ui/Table';
 
 import { getSortIcon } from 'helpers/getSortIcon';
 
+import { ICryptoAssetsTableProps } from './types';
 import styles from '../../CryptoAssetsTable.module.scss';
-interface ICryptoAssetsTableProps {
-  onClick: (name: ICryptoColumnNames) => VoidFunction;
-  tableItems: { title: string; name?: ICryptoColumnNames; sortDir?: ISortDirections }[];
-}
 
 export const CryptoAssetsHeader: FC<ICryptoAssetsTableProps> = ({ tableItems, onClick }) => {
   return (
-    <TableSection isHeader>
+    <TableSection isHeader className={styles.tableHeader}>
       <TableRow>
         {tableItems.map(({ title, sortDir, name }) => (
           <TableItem className={styles.tableHeaderItem} isHeader key={title}>

@@ -8,12 +8,17 @@ interface ITableSectionProps extends HTMLAttributes<HTMLTableSectionElement> {
   isHeader?: boolean;
 }
 
-export const TableSection: FC<ITableSectionProps> = ({ isHeader = false, children, ...props }) => {
+export const TableSection: FC<ITableSectionProps> = ({
+  isHeader = false,
+  className,
+  children,
+  ...props
+}) => {
   const Component = isHeader ? 'thead' : 'tbody';
 
   return (
     <Component
-      className={clsx(styles.tableSection, props.className, isHeader && styles.header)}
+      className={clsx(styles.tableSection, className, isHeader && styles.header)}
       {...props}
     >
       {children}

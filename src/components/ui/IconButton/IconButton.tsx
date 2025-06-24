@@ -2,11 +2,9 @@ import { FC } from 'react';
 
 import clsx from 'clsx';
 
-import { IButtonProps } from '../Button/types';
+import { IIconButtonProps } from './types';
 
 import styles from './IconButton.module.scss';
-
-interface IIconButtonProps extends Omit<IButtonProps, 'variant' | 'size'> {}
 
 export const IconButton: FC<IIconButtonProps> = ({
   isDisabled = false,

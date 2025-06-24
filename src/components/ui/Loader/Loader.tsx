@@ -2,13 +2,9 @@ import { FC } from 'react';
 
 import clsx from 'clsx';
 
-import styles from './Loader.module.scss';
+import { ILoaderProps } from './types';
 
-interface ILoaderProps {
-  size?: number;
-  backdrop?: boolean;
-  className?: string;
-}
+import styles from './Loader.module.scss';
 
 export const Loader: FC<ILoaderProps> = ({ size = 40, backdrop = false, className }) => {
   return (

@@ -1,24 +1,12 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import clsx from 'clsx';
 
+import { IOptionBase } from 'interfaces/options';
+
+import { IDropdownProps } from './types';
+
 import styles from './Dropdown.module.scss';
-
-export interface IOptionBase {
-  value: string;
-  label: string;
-}
-
-interface IDropdownProps<T extends IOptionBase> {
-  options: T[];
-  className?: string;
-  value?: string;
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-  placeholder?: string;
-  renderOption?: (option: T) => ReactNode;
-  renderValue?: (option: T) => ReactNode;
-}
 
 export const Dropdown = <T extends IOptionBase>({
   options,

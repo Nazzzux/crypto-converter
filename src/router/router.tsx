@@ -8,29 +8,22 @@ import { TradePage } from 'pages/TradePage/TradePage';
 
 import { ProtectedRoute } from 'components/ProtectedRoute/ProtectedRoute';
 
-import { AppProviders } from '../AppProviders';
-
 export const router = createBrowserRouter(
   [
     {
-      element: <AppProviders />,
+      element: <BaseLayout />,
       children: [
         {
-          element: <BaseLayout />,
-          children: [
-            {
-              element: <HomePage />,
-              path: HOME_PATH,
-            },
-            {
-              element: (
-                <ProtectedRoute>
-                  <TradePage />
-                </ProtectedRoute>
-              ),
-              path: TRADE_PATH,
-            },
-          ],
+          element: <HomePage />,
+          path: HOME_PATH,
+        },
+        {
+          element: (
+            <ProtectedRoute>
+              <TradePage />
+            </ProtectedRoute>
+          ),
+          path: TRADE_PATH,
         },
       ],
     },

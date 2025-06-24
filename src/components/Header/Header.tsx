@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 import { HOME_PATH } from 'constants/paths';
-import { getUser, useUserStore } from 'store/useUserStore';
 
 import { Container } from 'components/ui/Container';
 
@@ -11,8 +10,6 @@ import { Menu } from './Menu';
 import styles from './Header.module.scss';
 
 export const Header = () => {
-  const userData = useUserStore(getUser);
-
   return (
     <header className={styles.headerWrapper}>
       <Container>
@@ -20,7 +17,7 @@ export const Header = () => {
           <Link to={HOME_PATH} className={styles.logo}>
             CRYPTO
           </Link>
-          {userData && <Menu />}
+          <Menu />
           <AccountDataWrapper />
         </div>
       </Container>

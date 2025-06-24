@@ -18,6 +18,11 @@ export default defineVitestConfig({
       generateScopedName: '[name]_[local]_[hash:base64:5]',
     },
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTests.ts',
+  },
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),

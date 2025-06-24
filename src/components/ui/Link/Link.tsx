@@ -1,13 +1,11 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import clsx from 'clsx';
 
-import styles from './Link.module.scss';
+import { ILinkProps } from './types';
 
-interface ILinkProps extends PropsWithChildren {
-  to: string;
-}
+import styles from './Link.module.scss';
 
 export const Link: FC<ILinkProps> = ({ to, children }) => {
   return (

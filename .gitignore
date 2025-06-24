@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 # Environment and configuration
-.env
-.env.local
-.env.*.local
+# commented for the demo purposes only
+# .env
+# .env.local
+# .env.*.local
