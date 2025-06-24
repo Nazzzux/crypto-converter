@@ -12,11 +12,7 @@ export default defineVitestConfig({
       include: '**/*.svg',
     }),
   ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './setupTests.ts',
-  },
+  base: '/crypto-converter',
   css: {
     modules: {
       generateScopedName: '[name]_[local]_[hash:base64:5]',
